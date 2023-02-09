@@ -1,0 +1,312 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-Bold.ttf");
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-SemiBold.ttf");
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("/quantum screen assets/Quicksand font 1/static/Quicksand-Medium.ttf");
+    font-weight: 500;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Quicksand, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: #eeeeee;
+  }
+  
+  p {
+    color: #666666;
+    font-size: 12px;
+    margin: 0;
+    margin-right: 10px;
+  }
+  
+  .navbar {
+    background: url("../header pattern image.png");
+    border-bottom: solid 2px #31b9e4;
+  }
+  
+  .navbar .navbar-nav .nav-item .nav-link {
+    /* background: red;  */
+    letter-spacing: 0px;
+    color: #3fd28b;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 19px 32px;
+  }
+  
+  .navbar .navbar-nav .nav-item.active .nav-link {
+    /* background: red;  */
+    letter-spacing: 0px;
+    color: #fff;
+    border-bottom: 4px solid #fff;
+  }
+  
+  .navbar .notifications {
+    margin-left: auto;
+    /* margin-right: 10px; */
+  }
+  
+  .navbar .notifications div img {
+    width: 21px;
+  }
+  
+  .navbar .notifications div span {
+    font-size: 12px;
+    position: relative;
+    right: 18px;
+    top: -10px;
+  }
+  
+  .navbar .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar .navbar-toggler:focus {
+    border: none;
+  }
+  
+  .navbar .navbar-toggler .navbar-toggler-icon {
+    color: #1f7a54;
+    background: url("../icons/hamburger-menu.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline: none;
+    border: none;
+  }
+  
+  .container-title {
+    background: #8ddc97;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .container-title .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+    /* padding: 38px  20px; */
+  }
+  
+  .container-title .title img {
+    width: 24px;
+  }
+  
+  .container-title .title span {
+    font-size: 24px;
+    margin: 0 8px;
+  }
+  
+  .container-title .title h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .container-title .title.active {
+    border-bottom: 4px solid #000000;
+  }
+  
+  .container-title .title .container-title .title img {
+    width: 24px;
+  }
+  
+  .container-title .title span {
+    font-size: 24px;
+    margin: 0 8px;
+  }
+  
+  .container-title .title h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .sceondary-title {
+    border-bottom: 1px solid #00000021;
+    padding-bottom: 10px;
+  }
+  
+  .sceondary-title .dropdown .filter-label {
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .card {
+    border-radius: 0;
+    width: 36rem;
+  }
+  
+  .card .favourite {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 20px;
+    height: 24px;
+    background: url("../icons/favourite.svg");
+  }
+  
+  .card .unfavourite {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 20px;
+    height: 24px;
+    background: url("../icons/unfavourite.svg");
+  }
+  
+  .card .expired {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 52px;
+    text-align: center;
+    font-size: 10px;
+    background: #ffe4e6;
+    color: #d80000;
+  }
+  
+  .card img {
+    border-radius: 2px;
+  }
+  
+  .card .card-body {
+    width: 90%;
+    text-align: left;
+  }
+  
+  .card .card-body .card-title {
+    font-size: 16px;
+    font-weight: semibold;
+  }
+  
+  .card .card-body info-set .info {
+    margin-right: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .card .card-body info-set .info span {
+    font-weight: semibold;
+    color: #000000;
+  }
+  
+  .card .card-body .content > p + p {
+    border-left: solid 1px #0000001f;
+    padding-left: 10px;
+  }
+  
+  .card .card-body .content .additional {
+    color: #1f7a54;
+  }
+  
+  .card .card-footer {
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .card .card-footer .image-muted {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+  }
+  
+  .dropdown button {
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #00000021;
+    width: 100%;
+    text-align: left;
+    padding: 2px 0;
+    margin: 8px 0;
+    background: none;
+  }
+  
+  .dropdown button:hover {
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    text-align: left;
+    padding: 2px 0;
+    margin: 8px 0;
+    background: none;
+  }
+  
+  .tabs {
+    margin: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .tabs a {
+    color: #1f7a54;
+    font: normal normal medium 14px/18px Quicksand;
+    padding: 0 10px;
+  }
+  
+  .tabs > a + a {
+    border-left: 1px solid #0000001f;
+  }
+  
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px 0;
+    background-color: #fff;
+    position: relative;
+    bottom: 0;
+  }
+  
+  .footer img {
+    padding: 0 20px;
+  }
+  
+  .footer p {
+    padding: 0 4px;
+    color: #616161;
+    margin: auto 10px;
+  }
+  
+  .footer .copyright {
+    border-left: 1px solid #0000001f;
+  }
+  
+  .footer .company {
+    font-weight: bold;
+  }
+  /*# sourceMappingURL=dashboard.css.map */

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <!-- <link rel="stylesheet" href="footer.css" /> -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <img src="header pattern image.png" class="navbg" />
+      <img
+        class="logo"
+        src="icons/logo used in header.svg"
+        alt="qunatum logo"
+      />
+    </div>
+    <div class="container">
+      <div class="card">
+        <div class="heading">
+          <a href="#"><img src="icons/back.svg" alt="back image" /></a>
+          <h2>Log in with Quantum</h2>
+        </div>
+
+        <form class="card-form">
+          <div class="radio-input-set">
+            <div class="radio-input">
+              <span onclick="toggleradio(this)"></span>
+
+              <input
+                type="radio"
+                name="schoolType"
+                id="District"
+                value="District"
+                class="radio-button"
+              />
+              <label for="schoolType">District</label>
+            </div>
+
+            <div class="radio-input">
+              <span onclick="toggleradio(this)"></span>
+
+              <input
+                type="radio"
+                name="schoolType"
+                id="Independent School"
+                value="Independent School"
+                class="radio-button"
+              />
+              <label for="schoolType">Independent School</label>
+            </div>
+          </div>
+
+          <label for="state" class="label-dropdown">State</label>
+          <select value="state" name="state">
+            <option value="s1">s1</option>
+            <option value="s1">s1</option>
+            <option value="s1">s1</option>
+          </select>
+
+          <label for="District" class="label-dropdown">District</label>
+          <select value="District" name="District">
+            <option value="s1">s1</option>
+            <option value="s1">s1</option>
+            <option value="s1">s1</option>
+          </select>
+
+          <div class="input-box">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username/Email ID*"
+            />
+            <a href="#" class="forget-link">FORGOT USERNAME?</a>
+          </div>
+
+          <div class="input-box">
+            <div class="password-input">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password*"
+              />
+              <img src="icons/preview.svg" />
+            </div>
+            <a href="#" class="forget-link">FORGOT PASSWORD?</a>
+          </div>
+
+          <div class="rememberme-container">
+            <span onclick="togglecheckbox(this)"></span>
+            <input type="checkbox" name="rememberme" id="rememberme" />
+            <label for="rememberme" class="rememberme">Remember me</label>
+          </div>
+
+          <input type="submit" value="LOG IN" class="submit-button" />
+        </form>
+      </div>
+      <div class="tabs">
+        <a link="#">About</a>
+        <a link="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="icons/logo used in footer.svg" />
+      <p class="copyright">Copyright &copy; 2020-2021</p>
+      <p class="company">Zeus Sustems Ltd</p>
+      <p>All rights reserved</p>
+    </div>
+  </body>
+
+  <script src="js/login.js"></script>
+</html>

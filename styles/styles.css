@@ -1,0 +1,312 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-Bold.ttf");
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("..\\quantum screen assets\\Quicksand font 1\\static\\Quicksand-SemiBold.ttf");
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: Quicksand;
+    src: url("/quantum screen assets/Quicksand font 1/static/Quicksand-Medium.ttf");
+    font-weight: 500;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Quicksand, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  
+  .navbar {
+    background: #25313F;
+    height: 56px;
+  }
+  
+  .navbar .navbg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 56px;
+    background: transparent url("../header pattern image.png");
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
+  
+  .navbar .logo {
+    padding: 10px 24px;
+    width: 134px;
+  }
+  
+  .container {
+    background-color: #eeeeee;
+    height: 120%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .container .card {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 20px 10px #00000017;
+            box-shadow: 0 0 20px 10px #00000017;
+    border-radius: 5px;
+    border-top: 5px solid #6ad3ee;
+    padding: 40px;
+    width: 488px;
+    margin-top: 30px;
+  }
+  
+  .container .card .heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .container .card .heading h2 {
+    margin: auto;
+  }
+  
+  .container .card .card-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .container .card .card-form .radio-input-set {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 16px;
+    margin: 34px 0 25px 0;
+  }
+  
+  .container .card .card-form .radio-input-set .radio-input {
+    margin-right: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .container .card .card-form .radio-input-set .radio-input span {
+    width: 24px;
+    height: 24px;
+    background: url("../icons/radio-button-off.svg");
+    background-size: fill;
+    background-repeat: no-repeat;
+  }
+  
+  .container .card .card-form .radio-input-set .radio-input span.checked {
+    background: url("../icons/radio-button-on.svg");
+  }
+  
+  .container .card .card-form .radio-input-set .radio-input .radio-button {
+    display: none;
+  }
+  
+  .container .card .card-form .radio-input-set .radio-input label {
+    padding: 0 10px;
+  }
+  
+  .container .card .card-form .input-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .container .card .card-form select {
+    color: black;
+    border: none;
+    border-bottom: 1px solid #00000022;
+    font-size: 16px;
+    background: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-image: url("../icons/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    font-weight: 500;
+    margin-bottom: 56px;
+  }
+  
+  .container .card .card-form select:focus {
+    outline: none;
+  }
+  
+  .container .card .card-form select:focus {
+    outline: none;
+  }
+  
+  .container .card .card-form .label-dropdown {
+    font-size: 12px;
+    margin: 5px 0px;
+    color: #aaaaaa;
+  }
+  
+  .container .card .card-form input {
+    color: black;
+    border: none;
+    border-bottom: 1px solid #00000022;
+    font-size: 16px;
+  }
+  
+  .container .card .card-form input:focus {
+    outline: none;
+  }
+  
+  .container .card .card-form .password-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #0000001f;
+  }
+  
+  .container .card .card-form .password-input input {
+    border: none;
+  }
+  
+  .container .card .card-form .password-input img {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    padding: 0 10px;
+  }
+  
+  .container .card .card-form .forget-link {
+    color: #1f7a54;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    margin-bottom: 33px;
+    text-align: end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    font-weight: 500;
+  }
+  
+  .container .card .card-form .rememberme-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .container .card .card-form .rememberme-container span {
+    width: 24px;
+    height: 24px;
+    background: url("../icons/checkbox-unchecked.svg");
+    background-size: fill;
+    background-repeat: no-repeat;
+  }
+  
+  .container .card .card-form .rememberme-container span.checked {
+    background: url("../icons/checkbox-checked.svg");
+  }
+  
+  .container .card .card-form .rememberme-container input {
+    display: none;
+  }
+  
+  .container .card .card-form .rememberme-container label {
+    font-size: 16px;
+  }
+  
+  .container .card .card-form .submit-button {
+    background-color: #3fd28b;
+    padding: 10px;
+    display: block;
+    width: 50%;
+    margin: 34px auto 10px auto;
+    -webkit-box-shadow: 0px 3px 5px #0000003d;
+            box-shadow: 0px 3px 5px #0000003d;
+  }
+  
+  .tabs {
+    margin: 30px;
+  }
+  
+  .tabs a {
+    color: #1f7a54;
+    font: normal normal 500 14px/18px Quicksand;
+    padding: 0 10px;
+  }
+  
+  .tabs > a + a {
+    border-left: 1px solid #0000001f;
+  }
+  
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px 0;
+    background-color: #fff;
+    position: relative;
+    bottom: 0;
+  }
+  
+  .footer img {
+    padding: 0 20px;
+  }
+  
+  .footer p {
+    padding: 0 4px;
+    color: #616161;
+    margin: auto 10px;
+  }
+  
+  .footer .copyright {
+    border-left: 1px solid #0000001f;
+  }
+  
+  .footer .company {
+    font-weight: bold;
+  }
+  /*# sourceMappingURL=styles.css.map */

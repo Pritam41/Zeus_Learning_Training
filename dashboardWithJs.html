@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="dashboard.css" /> -->
+    <link rel="stylesheet" href="styles/dashoboardWithJs.css" />
+
+    <title>Dashboard</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <img src="header pattern image.png" class="navbg" />
+
+      <a class="navbar-brand" href="#">
+        <img src="icons/logo used in header.svg" alt="" />
+      </a>
+
+      <ul class="navbar-nav hide">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Content</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">USERS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">REPORTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ADMIN</a>
+        </li>
+      </ul>
+
+      <div class="notifications">
+        <div class="alert_icon">
+          <a href="#"
+            ><img src="icons/alerts.svg" alt="" />
+            <span class="badge">2</span></a
+          >
+          <div class="onhover_alert">
+            <ul>
+              <li>
+                <p class="alert_content">
+                  License for introduction to Algebra has been assigned to your
+                  school
+                </p>
+                <span></span>
+                <p>15-Sep-2018 at 07:21 pm</p>
+              </li>
+
+              <li>
+                <p class="alert_content">
+                  Lesson 3 Practice Worksheet overdue for Amy Santiago
+                </p>
+                <span></span>
+                <p class="alert_course">Course: Advanced Mathematics</p>
+                <p class="alert_date">15-Sep-2018 at 05:21 pm</p>
+              </li>
+
+              <li>
+                <p class="alert_content">23 new students created</p>
+                <span></span>
+                <p class="alert_date"></p>
+              </li>
+
+              <li>
+                <p class="alert_content">
+                  License for introduction to Algebra has been assigned to your
+                  school
+                </p>
+                <span></span>
+                <p class="alert_date">15-Sep-2018 at 07:21 pm</p>
+              </li>
+              <li>
+                <p class="alert_content">
+                  Lesson 3 Practice Worksheet overdue for Amy Santiago
+                </p>
+                <span></span>
+                <p class="alert_course">Course: Advanced Mathematics</p>
+                <p class="alert_date">15-Sep-2018 at 05:21 pm</p>
+              </li>
+              <div class="show">
+                <button class="show_button">SHOW ALL</button>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="announcement_icon">
+          <a href="#"
+            ><img src="icons/announcements.svg" alt="" />
+            <span class="badge">2</span>
+          </a>
+          <div class="onhover_announcements">
+            <div class=""></div>
+          </div>
+        </div>
+        <div id="user" class="user_icon">
+          <a href="#"
+            ><img src="icons/account_circle.svg" alt="" />
+            <span class="badge">T</span></a
+          >
+        </div>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <!-- container starts -->
+    <div class="container-body">
+      <div class="container-title">
+        <div class="title active" onclick="togglesection(this)">
+          <img src="icons/courses.svg" />
+          <span>4</span>
+          <h2>Course</h2>
+        </div>
+        <div class="title">
+          <img src="icons/classes.svg" />
+          <span>4</span>
+          <h2>Classes</h2>
+        </div>
+      </div>
+
+      <div class="sceondary-title">
+        <p>Showin 4 of 4 courses</p>
+        <div class="dropdown">
+          <label>Sort by :</label>
+          <select value="classes" name="classes">
+            <option value="s1">Course Name</option>
+            <option value="s1">Start Date</option>
+            <option value="s1">Number Of students</option>
+          </select>
+          <img src="icons/sort.svg" />
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="inner-container"></div>
+      </div>
+    </div>
+    <div class="tabs">
+      <a href="#">About</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <!-- footer starts -->
+    <div class="footer">
+      <img src="icons/logo used in footer.svg" />
+      <p class="copyright">Copyright &copy; 2020-2021</p>
+      <p class="company">Zeus Sustems Ltd</p>
+      <p>All rights reserved</p>
+    </div>
+  </body>
+
+  <script type="text/javascript" src="js/dashboard.js"></script>
+  <!-- <script type="text/javascript" src="js/dashboard/dashboard.js"></script> -->
+</html>
