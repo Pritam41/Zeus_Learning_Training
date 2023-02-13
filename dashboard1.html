@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard1.css" />
+    <script src="js/dashboard.js"></script>
+
+    <title>Dashboard1</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="header pattern image.png" class="navbg" />
+
+      <a class="navbar-brand" href="#">
+        <img src="icons/logo used in header.svg" alt="" />
+      </a>
+
+      <ul class="navbar-nav hide" id="myTopnav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Content</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">USERS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">REPORTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ADMIN</a>
+        </li>
+      </ul>
+
+      <div class="notifications">
+        <div class="alert_icon">
+          <a href="#"
+            ><img src="icons/alerts.svg" alt="" />
+            <span class="badge">2</span></a
+          >
+        </div>
+        <div class="announcement_icon">
+          <a href="#"
+            ><img src="icons/announcements.svg" alt="" />
+            <span class="badge">2</span>
+          </a>
+        </div>
+        <div id="user" class="user_icon">
+          <a href="#"
+            ><img src="icons/account_circle.svg" alt="" />
+            <span class="badge">T</span></a
+          >
+        </div>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="navbar-nav"
+        aria-controls="navbar-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        onclick="myFunction()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <!--Container Starts-->
+    <div class="container-body">
+      <div class="container-title">
+        <div class="title active">
+          <img src="icons/courses.svg" alt="" />
+          <span>4</span>
+          <h2>Course</h2>
+        </div>
+        <div class="title">
+          <img src="icons/classes.svg" alt="" />
+          <span>4</span>
+          <h2>Classes</h2>
+        </div>
+      </div>
+      <div class="secondary-title">
+        <p>Showing 4 of 4 Courses</p>
+        <div class="dropdown">
+          <label>Sort By:</label>
+          <select name="classes" value="classes">
+            <option value="s1">Course Name</option>
+            <option value="s1">Start Date</option>
+            <option value="s1">Number of Students</option>
+          </select>
+          <img src="icons/sort.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
