@@ -1,0 +1,2 @@
+npm run build - for building the bundle.js with the webpack
+npm install firebase-for installing firebase
