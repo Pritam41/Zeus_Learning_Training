@@ -6,7 +6,8 @@ import {
     query,where,
     orderBy,serverTimestamp,
     getDoc
-}from 'firebase/firestore'
+}
+from 'firebase/firestore'
 const firebaseConfig = {
     apiKey: "AIzaSyDFEFrlFG2Qtz598Sma9MsKRwYmt5AJoJo",
     authDomain: "fir-9-dojo-45e3e.firebaseapp.com",
@@ -49,6 +50,7 @@ const firebaseConfig = {
   })
 
   //adding documnents
+  
   const addBookForm = document.querySelector('.add')
   addBookForm.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -63,6 +65,7 @@ const firebaseConfig = {
   })
 
   //deleting doc
+
   const deleteBookForm = document.querySelector('.delete')
   deleteBookForm.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -73,11 +76,13 @@ const firebaseConfig = {
     })
   })
   //get a single doc
+
   const docRef = doc(db,'books','RjLeFejxEpKvloxo6NIF')
 
 //   getDoc(docRef).then((doc) =>{
 //     console.log(doc.data(),doc.id)
 //   })
+
 
 onSnapshot(docRef,(doc)=>{
     console.log(doc.data(),doc.id)

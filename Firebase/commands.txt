@@ -1,2 +1,22 @@
+npm init -y  //create a json file
+npm i webpack webpack-cli -D  //install webpack and save the file
+create a webapack.config.js file in root 
+then inside webpack.config.js{
+    const path = require('path')
+
+module.exports = {
+    mode:'development',
+    entry: './src/sandbox.js',
+    output: {
+        path: path.resolve(__dirname,'dist'),
+        filename: 'bundle.js'
+    },
+    watch:true
+}
+}
+
+
+
+
 npm run build - for building the bundle.js with the webpack
 npm install firebase-for installing firebase
