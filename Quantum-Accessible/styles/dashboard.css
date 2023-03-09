@@ -2,6 +2,27 @@
   font-family: quicksand;
   src: url("../assets/Quicksand font 1/Quicksand-VariableFont_wght.ttf");
 }
+/* Skip Link */
+.skip-content {
+  position: absolute;
+  left: 1%;
+  top: 56px;
+  padding: 4px;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  background-color: #3FD28B;
+  color: #FFFFFF;
+}
+
+.skip-content:focus {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 
 html, body {
   -webkit-box-sizing: border-box;
@@ -52,7 +73,6 @@ html, body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: h;
-  background: transparent url("../assets/header pattern image.png") 0% 0% padding-box;
   background-color: #25313f;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,25 +203,6 @@ html, body {
   margin: 0;
 }
 
-.skip-content {
-  position: absolute;
-  left: 1%;
-  top: 56px;
-  padding: 4px;
-  -webkit-transform: translateX(-150%);
-          transform: translateX(-150%);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  background-color: #3FD28B;
-  color: #FFFFFF;
-}
-
-.skip-content:focus {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
 
 /* --------------Navbar------------------ */
 .navbar, .navbar-middle {
@@ -602,7 +603,7 @@ html, body {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: (1fr);
       grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: 64px 45px auto;
       grid-template-rows: 64px 45px auto;
@@ -999,4 +1000,3 @@ html, body {
     width: 90%;
   }
 }
-/*# sourceMappingURL=dashboard.css.map */

@@ -1,3 +1,30 @@
+//getdata
+const getData = async (srcPath) => {
+    const response = await fetch(srcPath);
+    if (response.status !== 200) {
+        throw new Error("Failed to fetch the Data");
+    }
+    const data = await response.json();
+    return data;
+};
+Promise.all([
+    getData("./data/courses.json"),
+    getData("./data/notifications.json"),
+    getData("./data/announcements.json"),
+])
+    .then((values) => {
+    renderCards(values[0]);
+    renderNotifications(values[1]);
+    renderAnnouncements(values[2]);
+    // Initialize Notification and Announcement Menus
+    let menuButtons = document.querySelectorAll(".menu-button-links");
+    for (let i = 0; i < menuButtons.length; i++) {
+        new MenuButtonLinks(menuButtons[i]);
+    }
+})
+    .catch((err) => console.log("Error: ", err.message));
+
+
 //cards
 const mainBodyEl = document.querySelector(".main-body");
 class CardType {
@@ -901,28 +928,3 @@ class MenuButtonLinks {
         }
     }
 }
-//getdata
-const getData = async (srcPath) => {
-    const response = await fetch(srcPath);
-    if (response.status !== 200) {
-        throw new Error("Failed to fetch the Data");
-    }
-    const data = await response.json();
-    return data;
-};
-Promise.all([
-    getData("./data/courses.json"),
-    getData("./data/notifications.json"),
-    getData("./data/announcements.json"),
-])
-    .then((values) => {
-    renderCards(values[0]);
-    renderNotifications(values[1]);
-    renderAnnouncements(values[2]);
-    // Initialize Notification and Announcement Menus
-    let menuButtons = document.querySelectorAll(".menu-button-links");
-    for (let i = 0; i < menuButtons.length; i++) {
-        new MenuButtonLinks(menuButtons[i]);
-    }
-})
-    .catch((err) => console.log("Error: ", err.message));
