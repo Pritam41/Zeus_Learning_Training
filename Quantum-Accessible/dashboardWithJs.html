@@ -1,246 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles/dashoboardWithJs.css" />
-
-  <title>Dashboard</title>
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <title>Quantum Dashboard</title>
 </head>
-
 <body>
-  <nav class="navbar">
-    <img src="assets\header pattern image.png" class="navbg">
-
-    <a class="navbar-brand" href="#">
-      <img src="assets/icons/logo used in header.svg" alt="" />
-    </a>
-
-    <ul class="navbar-nav hide">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item dropdown  ">
-        <a class="nav-link" href="#">Content</a>
-        <ul class="nav-dropdown">
-          <li>Course Catalog</li>
-          <li>Course Catalog</li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown ">
-        <a class="nav-link" href="#">USERS</a>
-        <ul class="nav-dropdown">
-          <li>Course Catalog</li>
-          <li>Course Catalog</li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="#">REPORTS</a>
-        <ul class="nav-dropdown">
-          <li>Course Catalog</li>
-          <li>Course Catalog</li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="#">ADMIN</a>
-        <ul class="nav-dropdown">
-          <li>Course Catalog</li>
-          <li>Course Catalog</li>
-        </ul>
-      </li>
-    </ul>
-
-    <div class="notifications">
-      <div class="alert" >
-        <a href="#" tabindex="0" aria-haspopup="true" aria-label="notiflications"><img src="assets/icons/alerts.svg" alt="Notiflications" />
-          <span class="badge">2</span></a>
-
-        <div class="alerts hide" aria-hidden="true">
-
-          <ul>
-
-            <li>
-              <span class="checkmark abort" aria-hidden="true"></span>
-              <p class="alert-title">License for Introduction to Algebra has been assigned to your school</p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-            <li>
-              <span class="checkmark" aria-hidden="true"></span>
-              <p class="alert-title">Lesson 3 Practice Worksheet overdue for Amy Santiago</p>
-              <p>Course: <span>Advanced Mathematics</span></p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-            <li>
-              <span class="checkmark abort" aria-hidden="true"></span>
-              <p class="alert-title">23 new students created</p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-            <li>
-              <span class="checkmark abort" aria-hidden="true"></span>
-              <p class="alert-title">15 submissions ready for evaluation</p>
-              <p>Course: <span>Basics of Algebra</span></p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-            <li>
-              <span class="checkmark abort" aria-hidden="true"></span>
-              <p class="alert-title">License for Basic Concepts in Geometry has been assigned to your...</p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-            <li>
-              <span class="checkmark" aria-hidden="true"></span>
-              <p class="alert-title">Lesson 3 Practice Worksheet overdue for Sam Diego</p>
-              <p>Course: <span>Advanced Mathematics</span></p>
-              <p class="date">15-Sep-2018 at 07:21 pm</p>
-            </li>
-
-          </ul>
-          <button class="preview-alerts" aria-label="Show all notiflications">Show All</button>
-
-        </div>
-      </div>
-      <div class="announcement ">
-        <a href="#" tabindex="0" aria-haspopup="true" aria-label="announcements"><img src="assets/icons/announcements.svg" alt="" />
-          <span class="badge">2</span></a>
-        <div class="announcements hide" aria-hidden="true">
-
-          <ul>
-            <!-- <li>
-              <span class="checkmark" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Wilson Kumar</span></p>
-              <p class="announcement-title">No classes will be held on 21st Nov</p>
-              <p class="course">Course: Mathematics 101</p>
-              <div class="date-panel">
-                <p class="attachments"> 2 files are attached</p>
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-              </div>
-            </li> -->
-
-            <li>
-              <span class="checkmark" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Wilson Kumar</span></p>
-              <p class="announcement-title">No classes will be held on 21st Nov</p>
-              <div class="date-panel">
-                <p class="attachments"> 2 files are attached</p>
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-
-              </div>
-            </li>
-            <li>
-              <span class="checkmark abort" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Samson White</span></p>
-              <p class="announcement-title">Guest lecture on Geometry on 20th September</p>
-              <div class="date-panel">
-                <p class="attachments"> 2 files are attached</p>
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-              </div>
-            </li>
-            <li>
-              <span class="checkmark" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Wilson Kumar</span></p>
-              <p class="announcement-title">Additional course materials available on request</p>
-              <p class="course">Course: Mathematics 101</p>
-              <div class="date-panel">
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-
-              </div>
-            </li>
-            <li>
-              <span class="checkmark" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Wilson Kumar</span></p>
-              <p class="announcement-title">No classes will be held on 25th Dec</p>
-              <div class="date-panel">
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-
-              </div>
-            </li>
-            <li>
-              <span class="checkmark abort" onclick="tooglecheckmark(this)"></span>
-              <p class="user">PA: <span>Wilson Kumar</span></p>
-              <p class="announcement-title">Additional course materials available on request</p>
-              <p class="course">Course: Mathematics 101</p>
-              <div class="date-panel">
-                <p class="attachments"> 2 files are attached</p>
-                <p class="date">15-Sep-2018 at 07:21 pm</p>
-
-              </div>
-            </li>
-
-          </ul>
-          <button class="preview-announcements" aria-label="Show all announcements">Show All</button>
-          <button class="create-announcements" aria-label="Create new announcement">CREATE NEW</button>
-
-        </div>
-
-        </a>
-      </div>
-      <div id="user">
-        <a href="#"><img src="assets/icons/account_circle.svg" alt="User Account" />
-          <span class="badge">T</span></a>
-      </div>
-    </div>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-
-  <!-- container starts -->
-  <div class="container-body">
-    <div class="container-title">
-      <div class="title active" role="button" tabindex="0" aria-pressed="true" onclick="togglesection(this)" >
-        <img src="assets/icons/courses.svg" alt="Courses" />
-        <span>4</span>
-        <h2>Course</h2>
-      </div>
-      <div class="title"
-      role="button"
-      tabindex="0"
-      aria-pressed="false"
-      onclick="togglesection(this)"
-      >
-        <img src="assets/icons/classes.svg" />
-        <span>4</span>
-        <h2>Classes</h2>
-      </div>
-    </div>
-
-    <div class="sceondary-title">
-      <p>Showin 4 of 4 courses</p>
-      <div class="dropdown">
-        <label>Sort by :</label>
-        <select value="classes" name="classes">
-          <option value="s1">Course Name</option>
-          <option value="s1">Start Date</option>
-          <option value="s1">Number Of students</option>
-        </select>
-        
-        <img src="assets/icons/sort.svg" alt="Sort By" role="button" aria-label="Sort By"/>
-      </div>
-    </div>
-
+    <a href="#main" class="skip-content"> Skip to Main Content</a>
     <div class="container">
-      <div class="inner-container">
+        <header class="header">
+            <img class="logo-img" src="assets/icons/logo used in header.svg" alt="Quantum">
+            <div class="navbar">
+                <nav class="navbar-middle" aria-label="navigation-label">
+                    <a class="navbar-active" href="#">Dashboard</a>
+                    <a href="#">Content </a>
+                    <a href="#">Users</a>
+                    <a href="#">Report</a>
+                    <a href="#">Admin</a>
+                </nav>
+                
+                <section class="menu-button-links notification-menu"> 
+                    <button id="notification" class="notification BTN" aria-haspopup="true" aria-controls="notification-list">
+                        <img id="notification-icon-img" class="navbar-icon" src="assets/icons/alerts.svg" alt="Notifications">
+                        <span id="notification-badge" class="badge" aria-hidden="true"> 0 </span>
+                    </button>
+                    <div class="notification-list-div non-focusable">
+                        <div id="notification-list" role="menu" aria-labelledby="notification">
+                            
+                        </div>
+                        <button id="notification-btn" tabindex="-1" class="BTN" aria-label="Show all notifications"> Show All</button>
+                    </div>
+                </section>
+                <section class="menu-button-links announcement-menu">
+                    <button id="announcement" class="notification BTN" aria-haspopup="true" aria-controls="announcement-list">
+                        <img id="announcement-icon-img" class="navbar-icon" src="assets/icons/announcements.svg" alt="Announcements">
+                        <span id="announcement-badge" class="badge" aria-hidden="true"> 0 </span>
+                    </button>
+                    <div class="announcement-list-wrapper non-focusable">
+                        <div id="announcement-list" class="announcement-list" role="menu" aria-labelledby="announcement">                       
+                                                
+                        </div> 
+                        <div class="announcement-btn-container">
+                            <button class="BTN announcement-btn" tabindex="-1" aria-label="Show all announcements"> Show All</button>
+                            <button class="BTN announcement-btn" tabindex="-1" aria-label="Clear all announcements"> Clear </button>
+                        </div>
+                    </div>
+                </section>
+                <button class="BTN">
+                    <img class="user-avatar" src="assets/icons/account_circle.svg" alt="User Avatar">
+                </button>
+                <button class="BTN" id="hamburger-icon" aria-haspopup="true" aria-controls="hamburger-menu-links">
+                    <img class="hamburger-menu-icon" src="assets/icons/hamburger-menu.svg" alt="Hambuger">
+                </button>
+                <!-- <div class="hamburger menu wrapper"> -->
+                    <ul id="hamburger-menu-links" class="hamburger-menu non-focusable" aria-labelledby="hamburger-icon" role="menu">
+                        <li class="hamburger-list-item" role="presentation">
+                            <a class="hamburger-item" href="#" role="menuitem" > Dashboard </a>
+                        </li>
+                        <li class="hamburger-list-item" role="presentation">
+                            <a href="#" class="hamburger-item" aria-haspopup="true" aria-expanded="false" aria-controls="contentPanel" id="contentTitle" role="menuitem">
+                                Content <span class="hamburger-carrot" aria-hidden="true">  </span>
+                            </a>
+                            <ul class="inner-item" id="contentPanel" aria-labelledby="contentTitle">
+                                <li role="none"> <a href="#" role="menuitem"> Course Catalog </a></li>
+                            </ul>
+                        </li>
+                        <li class="hamburger-list-item" role="presentation">
+                            <a href="#" class="hamburger-item" aria-haspopup="true" aria-expanded="false" aria-controls="usersPanel" id="usersTitle" role="menuitem"> 
+                                Users <span class="hamburger-carrot" aria-hidden="true">  </span>
+                            </a>
+                            <ul class="inner-item" id="usersPanel" aria-labelledby="usersTitle" >
+                                <li role="none"> <a href="#" role="menuitem">Profile</a> </li>
+                                <li role="none"> <a href="#" role="menuitem">Sign Out</a> </li>
+                            </ul>
+                        </li>
+                        <li class="hamburger-list-item" role="presentation">
+                            <a href="#" class="hamburger-item" aria-haspopup="true" aria-expanded="false" aria-controls="reportsPanel" id="reportsTitle" role="menuitem"> 
+                                Reports <span class="hamburger-carrot" aria-hidden="true">  </span> 
+                            </a>
+                            <ul class="inner-item" id="reportsPanel" aria-labelledby="reportsTitle">
+                                <li role="none"> <a href="" role="menuitem"> View Report</a></li>
+                                <li role="none"> <a href="" role="menuitem">Generate Report</a> </li>
+                            </ul>
+                        </li>
+                        <li class="hamburger-list-item" role="presentation">
+                            <a href="#" class="hamburger-item" aria-haspopup="true" aria-expanded="false" aria-controls="adminPanel" id="adminTitle" role="menuitem"> 
+                                Admin <span class="hamburger-carrot" aria-hidden="true">  </span>
+                            </a>
+                            <ul class="inner-item" id="adminPanel" aria-labelledby="adminTitle">
+                                <li role="none"> <a href="" role="menuitem">Course Catalog</a> </li>
+                                <li role="none"> <a href="" role="menuitem">Students Catalog</a> </li>
+                                <li role="none"> <a href="" role="menuitem">Teachers Catalog</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                <!-- </div> -->
 
-
-      </div>
+                   
+        </header>
+        <main class="main-content" id="main">
+            <div class="menu-header flex-row">
+                <div class="courses">
+                    <button class="BTN">
+                        <img class="menu-header-icon" src="assets/icons/courses.svg" alt="">
+                        <span id="course-num" class="menu-header-txt strong"> 0 </span>
+                        <span class="menu-header-txt"> Courses</span>
+                    </button>
+                </div>
+                <div class="classes">
+                    <button class="BTN">
+                        <img class="menu-header-icon" src="assets/icons/classes.svg" alt="">
+                        <span class="menu-header-txt strong"> 4 </span>
+                        <span class="menu-header-txt"> Classes</span>
+                    </button>
+                </div>
+            </div>
+            <div class="filter-div flex-row">
+                <div class="filter-left">
+                    <p id="filter-course-num">Showing 0 of 0 Courses</p>
+                </div>
+                <div class="filter-right flex-row">
+                    <label for="sort-combobox"> Sort By: </label>  
+                    <select id="sort-combobox">  
+                    <option value="" disabled selected hidden> Course Name...   </option>  
+                    <option value = "Acceleration"> Acceleration   </option>  
+                    <option value = "Displacement"> Displacement  </option>  
+                    <option value = "Velocity"> Velocity  </option>  
+                    </select>
+                    <button class="BTN sort-icon">
+                        <img src="assets/icons/sort.svg" alt="Sort Icon">    
+                    </button>
+                </div>
+            </div>
+            <div class="main-body">
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-top">
+                <a href=""><span> About</span></a>
+                <span class="vertical-line">&#124;</span>
+                <a href=""><span> Contact Us</span></a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/icons/logo used in footer.svg" alt="QuantumLogo">
+                </div>
+                <p id="copyright"> Copyright &copy; 2022-23</p>
+                <p id="org-name"> Zeus System Pvt. Ltd.</p>
+                <p>All rights reserved</p>
+            </div>
+        </footer>
     </div>
-  </div>
-  <div class="tabs">
-    <a href="#">About</a>
-    <a href="#">Contact Us</a>
-  </div>
-  <!-- footer starts -->
-  <div class="footer">
-    <img src="assets/icons/logo used in footer.svg" />
-    <p class="copyright">Copyright &copy; 2020-2021</p>
-    <p class="company">Zeus Sustems Ltd</p>
-    <p>All rights reserved</p>
-  </div>
+    <script src="./js/dashboard.js"></script>
+
 </body>
-
-<!-- <script type="text/javascript" src="js/dashboard.js"></script> -->
-<script type="text/javascript" src="js/dashboardwithjson.js"></script>
-
 </html>
