@@ -13,11 +13,12 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <img src="header pattern image.png" class="navbg">
+  <a href="#main" class="skip-content"> Skip to Main Content</a>
+  <nav class="navbar" aria-label="navbar">
+    <img src="header pattern image.png" class="navbg" alt="navbar background image" >
 
     <a class="navbar-brand" href="#">
-      <img src="icons/logo used in header.svg" alt="" />
+      <img src="icons/logo used in header.svg" alt="Quantum Logo" />
     </a>
 
     <ul class="navbar-nav hide">
@@ -55,11 +56,11 @@
     </ul>
 
     <div class="notifications">
-      <div class="alert">
+      <div class="alert" >
         <a href="#"><img src="icons/alerts.svg" alt="" />
-          <span class="badge">2</span></a>
+          <span class="badge" aria-live="polite" aria-atomic="true">2</span></a>
 
-        <div class="alerts hide">
+        <div class="alerts hide" role="dialog" aria-label="alert popup" aria-expanded="false" >
 
           <ul>
             <!-- <li>
@@ -105,14 +106,14 @@
             </li>
 
           </ul>
-          <button class="preview-alerts">Show All</button>
+          <button class="preview-alerts" aria-label="Show All Notiflications">Show All</button>
 
         </div>
       </div>
       <div class="announcement ">
         <a href="#"><img src="icons/announcements.svg" alt="" />
-          <span class="badge">2</span></a>
-        <div class="announcements hide">
+          <span class="badge" aria-live="polite" aria-atomic="true">2</span></a>
+        <div class="announcements hide" role="dialog" aria-label="announcement popup" aria-expanded="false">
 
           <ul>
             <!-- <li>
@@ -177,16 +178,16 @@
             </li>
 
           </ul>
-          <button class="preview-announcements">Show All</button>
-          <button class="create-announcements">CREATE NEW</button>
+          <button class="preview-announcements" aria-label="Show All announcement">Show All</button>
+          <button class="create-announcements" aria-label="Create new announcement">CREATE NEW</button>
 
         </div>
 
         </a>
       </div>
       <div id="user">
-        <a href="#"><img src="icons/account_circle.svg" alt="" />
-          <span class="badge">T</span></a>
+        <a href="#"><img src="icons/account_circle.svg" alt="user account icon"  />
+          <span class="badge" aria-label="First letter of User's name">T</span></a>
       </div>
     </div>
 
@@ -198,14 +199,14 @@
 
   <!-- container starts -->
   <div class="container-body">
-    <div class="container-title">
-      <div class="title active" onclick="togglesection(this)">
-        <img src="icons/courses.svg" />
+    <div class="container-title" role="tablist" >
+      <div class="title active" role="tab" tabindex="0" aria-selected="true" onclick="togglesection(this)">
+        <img src="icons/courses.svg" alt="courses icon" />
         <span>4</span>
         <h2>Course</h2>
       </div>
-      <div class="title">
-        <img src="icons/classes.svg" />
+      <div class="title" role="tab"  tabindex="0" aria-selected="false">
+        <img src="icons/classes.svg" alt="classes icon" />
         <span>4</span>
         <h2>Classes</h2>
       </div>
@@ -213,31 +214,31 @@
 
     <div class="sceondary-title">
       <p>Showin 4 of 4 courses</p>
-      <div class="dropdown">
+      <div class="dropdown" role="combobox" aria-expanded="false">
         <label>Sort by :</label>
-        <select value="classes" name="classes">
+        <select value="classes" name="classes" >
           <option value="s1">Course Name</option>
           <option value="s1">Start Date</option>
           <option value="s1">Number Of students</option>
         </select>
-        <img src="icons/sort.svg" />
+        <img src="icons/sort.svg"  role="button" tabindex="0" aria-label="Sort By Button" />
       </div>
     </div>
 
     <div class="container">
-      <div class="inner-container">
+      <div class="inner-container" id="main">
 
 
       </div>
     </div>
   </div>
   <div class="tabs">
-    <a href="#">About</a>
-    <a href="#">Contact Us</a>
+    <a href="#" aria-label="Information about the owner of site">About</a>
+    <a href="#" aria-label="Contact the owner of site">Contact Us</a>
   </div>
   <!-- footer starts -->
   <div class="footer">
-    <img src="icons/logo used in footer.svg" />
+    <img src="icons/logo used in footer.svg"  alt="Quantum logo used in footer"/>
     <p class="copyright">Copyright &copy; 2020-2021</p>
     <p class="company">Zeus Sustems Ltd</p>
     <p>All rights reserved</p>

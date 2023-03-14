@@ -41,28 +41,28 @@ function createcardfooter(footer) {
     footerhtml.classList.add('card-footer');
     var footerelements = "";
     if (footer.iswatch) {
-        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(this)" />';
+        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="preview" tabindex="0" id="footer-btn"  />';
     }
     else {
-        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(this)" class="image-muted"/>';
+        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="preview" tabindex="0" id="footer-btn"/>';
     }
     if (footer.iscalender) {
-        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(this)" />';
+        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="manage course" tabindex="0" id="footer-btn"  />';
     }
     else {
-        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(this)" class="image-muted"/>';
+        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="manage course" tabindex="0" id="footer-btn"  />';
     }
     if (footer.isgraded) {
-        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(this)" />';
+        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="grade submission" tabindex="0" id="footer-btn"/>';
     }
     else {
-        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(this)" class="image-muted"/>';
+        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="grade submission" tabindex="0" id="footer-btn"/>';
     }
     if (footer.isreported) {
-        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(this)" />';
+        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="reports" tabindex="0" id="footer-btn"/>';
     }
     else {
-        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(this)" class="image-muted"/>';
+        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="reports" tabindex="0" id="footer-btn"/>';
     }
     footerhtml.innerHTML = footerelements;
     return footerhtml;
@@ -70,28 +70,28 @@ function createcardfooter(footer) {
 function createcard(course) {
     var card = "";
     if (course.isfavourite) {
-        card += '<span class="favourite" onclick="togglefavourite(this)"></span>';
+        card += '<span class="favourite" onclick="togglefavourite(this)" onkeypress="handleKeyPress(this,event)" tabindex="0" role="button" aria-label="Remove from favourites"></span>';
     }
     else {
-        card += '<span class="unfavourite" onclick="togglefavourite(this)"></span>';
+        card += '<span class="unfavourite" onclick="togglefavourite(this)" onkeypress="handleKeyPress(this,event)" tabindex="0" role="button" aria-label="Add to favourites"></span>';
     }
     if (course.isexpired) {
-        card += '<span class="expired">EXPIRED</span>';
+        card += '<span class="expired" aria-label="Class is expired">EXPIRED</span>';
     }
-    var cardcontent = "  \n  \n      <div class=\"card-contents\">\n        <div class=\"col-4\">\n          <img src=\"".concat(course.image, "\" class=\"img-fluid\" alt=\"...\" />\n        </div>\n        <div class=\"col-8\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">").concat(course.title, "</h5>\n            <div class=\"content\">\n              <p class=\"subject\">").concat(course.subject, "</p>\n              <p class=\"grade\">\n                Grade ").concat(course.grade, "\n                <span class=\"additional\">+").concat(course.additional_grade, "</span>\n              </p>\n            </div>\n            <div class=\"info-set\">\n            ").concat(course.units ? '<div class="info"><p class="text"><span>' + course.units + '</span> units</p></div>' : " ", "\n            ").concat(course.lessons ? '<div class="info"><p class="text"><span>' + course.lessons + '</span> Lessons</p></div>' : " ", "\n            ").concat(course.topics ? '<div class="info"><p class="text"><span>' + course.topics + '</span> topics</p></div>' : " ", "\n  \n  \n            </div>");
+    var cardcontent = "  \n  \n      <div class=\"card-contents\">\n        <div class=\"col-4\">\n          <img src=\"".concat(course.image,  "\" class=\"img-fluid\" alt=\"Image of Course\" />\n        </div>\n        <div class=\"col-8\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\" role=\"heading\" aria-label=\"course title\">").concat(course.title, "</h5>\n            <div class=\"content\">\n              <p class=\"subject\" aria-label=\"subject of course\">").concat(course.subject, "</p>\n              <p class=\"grade\" aria-label=\"Course grade\">\n                Grade ").concat(course.grade, "\n                <span class=\"additional\" aria-label=\"additional grade for course\">+" ).concat(course.additional_grade, "</span>\n              </p>\n            </div>\n            <div class=\"info-set\">\n            ").concat(course.units ? '<div class="info"><p class="text" aria-label="units of course"><span >' + course.units + '</span> units</p></div>' : " ", "\n            ").concat(course.lessons ? '<div class="info"><p class="text" aria-label="number of lessons of course"><span>' + course.lessons + '</span> Lessons</p></div>' : " ", "\n            ").concat(course.topics ? '<div class="info"><p class="text" aria-label="Total number of topics included in course"><span>' + course.topics + '</span> topics</p></div>' : " ", "\n  \n  \n            </div>");
     card += cardcontent;
-    var dropdown = "\n            <div class=\"dropdown\">\n              ";
-    if (course.classes.length == 0) {
-        dropdown += "<select value=\"classes\" name=\"classes\" class=\"noclasses\">";
-        dropdown += "<option value=\"s1\">No Classes</option>";
-    }
-    else {
-        dropdown += "<select value=\"classes\" name=\"classes\">";
-        for (var index = 0; index < course.classes.length; index++) {
-            dropdown += "<option value=\"".concat(course.classes[index], "\">").concat(course.classes[index], "</option>");
+    var dropdown = '<div class="dropdown" role="dropdown">' +
+               '<select name="classes" aria-label="Select a class">';
+        if (course.classes.length == 0) {
+                dropdown += '<option value="s1">No Classes</option>';
+            }       
+        else {
+            for (var index = 0; index < course.classes.length; index++) {
+                dropdown += '<option value="' + course.classes[index] + '">' + course.classes[index] + '</option>';
+            }
         }
-    }
-    dropdown += "\n  </select>\n  </div>\n  ";
+dropdown += '</select></div>';
+
     card += dropdown;
     var contents = "\n            <div class=\"content\">\n            ".concat(course.students ? '<p class="students">' + course.students + ' students</p>' : " ", "\n  \n              <p class=\"dates\">").concat(course.start_date ? course.start_date : " ", "  ").concat(course.end_date ? "-" + course.end_date : " ", "</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  ");
     card += contents;
@@ -131,76 +131,179 @@ getdata("../Courses.json");
 var alert = document.querySelector(".alert");
 var alerts = document.getElementsByClassName("alerts")[0];
 var onalert = false;
-alert.addEventListener("mouseenter", function () {
+
+// function to open the pop-up
+function openAlert() {
     alerts.classList.remove("hide");
     document.querySelector(".alert a img").style.filter = "brightness(0) invert(1)";
     document.querySelector(".alert a span").style.display = "none";
     onalert = true;
-});
-alerts.addEventListener("mouseenter", function () {
-    onalert = true;
-    alerts.classList.remove("hide");
-    document.querySelector(".alert a img").style.filter = "brightness(0) invert(1)";
-    document.querySelector(".alert a span").style.display = "none";
-});
-alerts.addEventListener("mouseleave", function () {
+}
+
+// function to close the pop-up
+function closeAlert() {
     onalert = false;
     alerts.classList.add("hide");
     document.querySelector(".alert a img").style.filter = "none";
     document.querySelector(".alert a span").style.display = "flex";
+}
+
+alert.addEventListener("mouseenter", function () {
+    openAlert();
+    document.querySelector('.alerts').setAttribute('aria-expanded','true');
 });
+
+alerts.addEventListener("mouseenter", function () {
+    openAlert();
+    document.querySelector('.alerts').setAttribute('aria-expanded','true');
+});
+
+alerts.addEventListener("mouseleave", function () {
+    closeAlert();
+    document.querySelector('.alerts').setAttribute('aria-expanded','false');
+});
+
 alert.addEventListener("mouseleave", function () {
-    onalert = false;
     setTimeout(function () {
         if (!onalert) {
-            alerts.classList.add("hide");
-            document.querySelector(".alert a img").style.filter = "none";
-            document.querySelector(".alert a span").style.display = "flex";
+            closeAlert();
+            document.querySelector('.alerts').setAttribute('aria-expanded','false');
         }
     }, 100);
 });
+
+// add event listener for Enter key
+alert.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        openAlert();
+        document.querySelector('.alerts').setAttribute('aria-expanded','true');
+    }
+});
+alerts.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        openAlert();
+        document.querySelector('.alerts').setAttribute('aria-expanded','true');
+    }
+});
+
+// add event listener for Escape key
+alerts.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeAlert();
+        document.querySelector('.alerts').setAttribute('aria-expanded','false');
+
+    }
+});
+alert.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeAlert();
+        document.querySelector('.alerts').setAttribute('aria-expanded','false');
+    }
+});
+
+
+
 // Notifications hover effects
 var announcement = document.querySelector(".announcement");
 var announcements = document.getElementsByClassName("announcements")[0];
 var onannouncement = false;
-announcement.addEventListener("mouseenter", function () {
-    announcements.classList.remove("hide");
-    document.querySelector(".announcement a img").style.filter = "brightness(0) invert(1)";
-    document.querySelector(".announcement a span").style.display = "none";
-    onannouncement = true;
-});
-announcements.addEventListener("mouseenter", function () {
+function openAnnouncement(){
     onannouncement = true;
     announcements.classList.remove("hide");
     document.querySelector(".announcement a img").style.filter = "brightness(0) invert(1)";
     document.querySelector(".announcement a span").style.display = "none";
-});
-announcements.addEventListener("mouseleave", function () {
+
+}
+function closeAnnouncement(){
     onannouncement = false;
     announcements.classList.add("hide");
     document.querySelector(".announcement a img").style.filter = "none";
     document.querySelector(".announcement a span").style.display = "flex";
+}
+announcement.addEventListener("mouseenter", function () {
+    openAnnouncement();
+    document.querySelector('.announcements').setAttribute('aria-expanded','true');
+});
+announcements.addEventListener("mouseenter", function () {
+    openAnnouncement();
+    document.querySelector('.announcements').setAttribute('aria-expanded','true');
+});
+announcements.addEventListener("mouseleave", function () {
+    closeAnnouncement();
+    document.querySelector('.announcements').setAttribute('aria-expanded','false');
 });
 announcement.addEventListener("mouseleave", function () {
     console.log("card-title");
     onannouncement = false;
     setTimeout(function () {
         if (!onannouncement) {
-            announcements.classList.add("hide");
-            document.querySelector(".announcement a img").style.filter = "none";
-            document.querySelector(".announcement a span").style.display = "flex";
+            closeAnnouncement();
+            document.querySelector('.announcements').setAttribute('aria-expanded','false');
         }
     }, 100);
 });
-function togglemuted(x) {
-    x.classList.toggle("image-muted");
+announcement.addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        openAnnouncement();
+        document.querySelector('.announcements').setAttribute('aria-expanded','true');
+    }
+});
+announcements.addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        openAnnouncement();
+        document.querySelector('.announcements').setAttribute('aria-expanded','true');
+    }
+});
+announcements.addEventListener("keydown",function(event){
+    if(event.key === "Escape"){
+        closeAnnouncement();
+        document.querySelector('.announcements').setAttribute('aria-expanded','false');
+    }
+})
+announcement.addEventListener("keydown",function(event){
+    if(event.key === "Escape"){
+        closeAnnouncement();
+        document.querySelector('.announcements').setAttribute('aria-expanded','false');
+    }
+})
+
+function togglemuted(event) {
+    var isKeyboardEvent = event.type === "keydown";
+
+    // Get the target element that was clicked or focused
+    var target = isKeyboardEvent ? event.target : event.currentTarget;
+    if (isKeyboardEvent && event.key !== "Enter") {
+        // If the event was triggered by a keyboard event that was not the "Enter" key, do nothing
+        return;
+      }
+  
+    // Toggle the "image-muted" class on the target element
+    target.classList.toggle("image-muted");
+  
+    // If the event was triggered by a keyboard event, prevent default action
+    if (isKeyboardEvent) {
+      event.preventDefault();
+    }
+    
 }
+
 function togglefavourite(x) {
     x.classList.toggle("unfavourite");
-}
+    if (x.classList.contains("unfavourite")) {
+      x.setAttribute("aria-label", "Add to favourites");
+    } else {
+      x.setAttribute("aria-label", "Remove from favourites");
+    }
+  }
+  function handleKeyPress(spanElement, event) {
+    if (event.key === 'Enter') {
+      togglefavourite(spanElement);
+    }
+  }
 function tooglecheckmark(x) {
     x.classList.toggle("abort");
 }
+
 var navdropdown = document.querySelectorAll(".nav-item.dropdown ");
 var _loop_1 = function (index) {
     var element = navdropdown[index];
@@ -244,3 +347,72 @@ toggle.addEventListener("mouseleave", function () {
         }
     }, 100);
 });
+// Add keyboard event listeners to the hamburger menu button and its associated dropdown menus
+var hamburger = document.getElementsByClassName("navbar-toggler")[0];
+var dropdowns = document.getElementsByClassName("nav-dropdown");
+var links = document.querySelectorAll(".nav-link");
+
+// When the hamburger menu button is focused, show the navbar and select the first link
+hamburger.addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) { // enter key
+    event.preventDefault();
+    navbar.classList.remove("hide");
+    onnav = true;
+    links[0].focus(); // focus on the first link
+  }
+});
+
+// When the navbar is shown, allow arrow key navigation within the hamburger menu
+document.addEventListener("keydown", function(event) {
+  if (onnav) {
+    if (event.keyCode === 27 || event.keyCode === 9) { // escape or tab key
+      event.preventDefault();
+      navbar.classList.add("hide");
+      onnav = false;
+    } else if (event.keyCode === 37 || event.keyCode === 38) { // left or up arrow key
+      event.preventDefault();
+      var linkIndex = Array.prototype.indexOf.call(links, document.activeElement);
+      if (linkIndex > 0) {
+        links[linkIndex - 1].focus();
+      }
+    } else if (event.keyCode === 39 || event.keyCode === 40) { // right or down arrow key
+      event.preventDefault();
+      var linkIndex = Array.prototype.indexOf.call(links, document.activeElement);
+      if (linkIndex < links.length - 1) {
+        links[linkIndex + 1].focus();
+      }
+    }
+  }
+});
+
+// When a dropdown menu is shown, allow keyboard navigation within the menu
+for (var i = 0; i < dropdowns.length; i++) {
+  dropdowns[i].addEventListener("keydown", function(event) {
+    var dropdownLinks = this.querySelectorAll("li");
+    var firstLink = dropdownLinks[0].querySelector("a");
+    var lastLink = dropdownLinks[dropdownLinks.length - 1].querySelector("a");
+    if (event.keyCode === 27) { // escape key
+      event.preventDefault();
+      hamburger.focus(); // focus back on the hamburger menu button
+      navbar.classList.add("hide");
+      for (var it = 0; it < navdropdown.length; it++) {
+        navdropdown[it].classList.remove("select");
+      }
+    } else if (event.keyCode === 9) { // tab key
+      if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        hamburger.focus(); // focus back on the hamburger menu button
+      }
+    }
+  });
+}
+
+// When a link within a dropdown menu is focused, add a 'select' class to its parent dropdown item
+for (var j = 0; j < links.length; j++) {
+  links[j].addEventListener("focus", function(event) {
+    event.target.parentElement.parentElement.classList.add("select");
+  });
+  links[j].addEventListener("blur", function(event) {
+    event.target.parentElement.parentElement.classList.remove("select");
+  });
+}

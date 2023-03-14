@@ -20,6 +20,27 @@
   src: url("/quantum screen assets/Quicksand font 1/static/Quicksand-Medium.ttf");
   font-weight: 500;
 }
+/* Skip Link */
+.skip-content {
+  position: absolute;
+  left: 1%;
+  top: 56px;
+  padding: 4px;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  background-color: #3FD28B;
+  color: #FFFFFF;
+}
+
+.skip-content:focus {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 
 body {
   margin: 0;
