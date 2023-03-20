@@ -40,7 +40,9 @@
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
-
+/* .focused{
+  outline: 2px solid black;
+} */
 
 body {
   margin: 0;

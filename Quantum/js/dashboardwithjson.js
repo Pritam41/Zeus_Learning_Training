@@ -41,28 +41,28 @@ function createcardfooter(footer) {
     footerhtml.classList.add('card-footer');
     var footerelements = "";
     if (footer.iswatch) {
-        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="preview" tabindex="0" id="footer-btn"  />';
+        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="preview" tabindex="0"   />';
     }
     else {
-        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="preview" tabindex="0" id="footer-btn"/>';
+        footerelements += '<img src="icons/preview.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="preview" tabindex="0" />';
     }
     if (footer.iscalender) {
-        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="manage course" tabindex="0" id="footer-btn"  />';
+        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="manage course" tabindex="0"   />';
     }
     else {
-        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="manage course" tabindex="0" id="footer-btn"  />';
+        footerelements += '<img src="icons/manage course.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="manage course" tabindex="0"   />';
     }
     if (footer.isgraded) {
-        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="grade submission" tabindex="0" id="footer-btn"/>';
+        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="grade submission" tabindex="0" />';
     }
     else {
-        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="grade submission" tabindex="0" id="footer-btn"/>';
+        footerelements += '<img src="icons/grade submissions.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="grade submission" tabindex="0" />';
     }
     if (footer.isreported) {
-        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="reports" tabindex="0" id="footer-btn"/>';
+        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  role="button" aria-label="reports" tabindex="0" />';
     }
     else {
-        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="reports" tabindex="0" id="footer-btn"/>';
+        footerelements += '<img src="icons/reports.svg" onclick="togglemuted(event)" onkeydown="togglemuted(event)"  class="image-muted" role="button" aria-label="reports" tabindex="0" />';
     }
     footerhtml.innerHTML = footerelements;
     return footerhtml;
@@ -80,7 +80,7 @@ function createcard(course) {
     }
     var cardcontent = "  \n  \n      <div class=\"card-contents\">\n        <div class=\"col-4\">\n          <img src=\"".concat(course.image,  "\" class=\"img-fluid\" alt=\"Image of Course\" />\n        </div>\n        <div class=\"col-8\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\" role=\"heading\" aria-label=\"course title\">").concat(course.title, "</h5>\n            <div class=\"content\">\n              <p class=\"subject\" aria-label=\"subject of course\">").concat(course.subject, "</p>\n              <p class=\"grade\" aria-label=\"Course grade\">\n                Grade ").concat(course.grade, "\n                <span class=\"additional\" aria-label=\"additional grade for course\">+" ).concat(course.additional_grade, "</span>\n              </p>\n            </div>\n            <div class=\"info-set\">\n            ").concat(course.units ? '<div class="info"><p class="text" aria-label="units of course"><span >' + course.units + '</span> units</p></div>' : " ", "\n            ").concat(course.lessons ? '<div class="info"><p class="text" aria-label="number of lessons of course"><span>' + course.lessons + '</span> Lessons</p></div>' : " ", "\n            ").concat(course.topics ? '<div class="info"><p class="text" aria-label="Total number of topics included in course"><span>' + course.topics + '</span> topics</p></div>' : " ", "\n  \n  \n            </div>");
     card += cardcontent;
-    var dropdown = '<div class="dropdown" role="dropdown">' +
+    var dropdown = '<div class="dropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Dropdwon menu for selecting a class">' +
                '<select name="classes" aria-label="Select a class">';
         if (course.classes.length == 0) {
                 dropdown += '<option value="s1">No Classes</option>';
@@ -91,6 +91,7 @@ function createcard(course) {
             }
         }
 dropdown += '</select></div>';
+
 
     card += dropdown;
     var contents = "\n            <div class=\"content\">\n            ".concat(course.students ? '<p class="students">' + course.students + ' students</p>' : " ", "\n  \n              <p class=\"dates\">").concat(course.start_date ? course.start_date : " ", "  ").concat(course.end_date ? "-" + course.end_date : " ", "</p>\n            </div>\n          </div>\n        </div>\n      </div>\n  ");
@@ -128,144 +129,195 @@ function getdata(url) {
 getdata("../Courses.json");
 // Interaction in dashboard
 // alerts onhover interaction
-var alert = document.querySelector(".alert");
-var alerts = document.getElementsByClassName("alerts")[0];
-var onalert = false;
+// define variables for the alerts and the alert icon
+const alerts = document.querySelector('.alerts');
+const alertIcon = document.querySelector('.alert');
 
-// function to open the pop-up
-function openAlert() {
-    alerts.classList.remove("hide");
-    document.querySelector(".alert a img").style.filter = "brightness(0) invert(1)";
-    document.querySelector(".alert a span").style.display = "none";
-    onalert = true;
+// define variables for tracking the state of the alert popup and the currently selected alert
+let onAlertPopup = false;
+let selectedAlertIndex = -1;
+
+// function to open the alert popup and set its state
+function openAlertPopup() {
+  alerts.classList.remove('hide');
+  document.querySelector(".alert a img").style.filter = "brightness(0) invert(1)";
+  document.querySelector(".alert a span").style.display = "none";
+  alertIcon.setAttribute('aria-expanded', 'true');
+  onAlertPopup = true;
+  document.querySelector('.alerts li').focus();
+  
 }
 
-// function to close the pop-up
-function closeAlert() {
-    onalert = false;
-    alerts.classList.add("hide");
-    document.querySelector(".alert a img").style.filter = "none";
-    document.querySelector(".alert a span").style.display = "flex";
+// function to close the alert popup and reset its state
+function closeAlertPopup() {
+  alerts.classList.add('hide');
+  document.querySelector(".alert a img").style.filter = "none";
+  document.querySelector(".alert a span").style.display = "flex";
+  alertIcon.setAttribute('aria-expanded', 'false');
+  onAlertPopup = false;
+  selectedAlertIndex = -1;
+  alerts.querySelectorAll('.selected').forEach(alert => {
+    alert.classList.remove('selected');
+  });
 }
 
-alert.addEventListener("mouseenter", function () {
-    openAlert();
-    document.querySelector('.alerts').setAttribute('aria-expanded','true');
+// function to handle selecting an alert using the mouse
+function selectAlert(index) {
+  if (index < 0 || index >= alerts.children.length) {
+    return;
+  }
+  alerts.querySelectorAll('.selected').forEach(alert => {
+    alert.classList.remove('selected');
+  });
+  selectedAlertIndex = index;
+  const selectedAlert = alerts.children[selectedAlertIndex];
+  selectedAlert.classList.add('selected');
+  selectedAlert.focus();
+}
+
+// add event listeners for mouse interactions
+alertIcon.addEventListener('mouseenter', () => {
+  openAlertPopup();
 });
 
-alerts.addEventListener("mouseenter", function () {
-    openAlert();
-    document.querySelector('.alerts').setAttribute('aria-expanded','true');
+alerts.addEventListener('mouseenter', () => {
+  openAlertPopup();
 });
 
-alerts.addEventListener("mouseleave", function () {
-    closeAlert();
-    document.querySelector('.alerts').setAttribute('aria-expanded','false');
+alerts.addEventListener('mouseleave', () => {
+  closeAlertPopup();
 });
 
-alert.addEventListener("mouseleave", function () {
-    setTimeout(function () {
-        if (!onalert) {
-            closeAlert();
-            document.querySelector('.alerts').setAttribute('aria-expanded','false');
-        }
-    }, 100);
-});
-
-// add event listener for Enter key
-alert.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        openAlert();
-        document.querySelector('.alerts').setAttribute('aria-expanded','true');
+alertIcon.addEventListener('mouseleave', () => {
+  setTimeout(() => {
+    if (!onAlertPopup) {
+      closeAlertPopup();
     }
-});
-alerts.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        openAlert();
-        document.querySelector('.alerts').setAttribute('aria-expanded','true');
-    }
+  }, 100);
 });
 
-// add event listener for Escape key
-alerts.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        closeAlert();
-        document.querySelector('.alerts').setAttribute('aria-expanded','false');
-
-    }
-});
-alert.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        closeAlert();
-        document.querySelector('.alerts').setAttribute('aria-expanded','false');
-    }
+alerts.addEventListener('click', event => {
+  const alert = event.target.closest('li');
+  if (alert && alerts.contains(alert)) {
+    alert.focus();
+  }
 });
 
+// add event listeners for keyboard interactions
+alertIcon.addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    openAlertPopup();
+  }
+});
+
+alerts.addEventListener('keydown', event => {
+  switch (event.key) {
+    case 'Escape':
+      closeAlertPopup();
+      break;
+    case 'ArrowUp':
+      selectAlert(selectedAlertIndex - 1);
+      break;
+    case 'ArrowDown':
+      selectAlert(selectedAlertIndex + 1);
+      break;
+    case 'Enter':
+      const alert = alerts.children[selectedAlertIndex];
+      if (alert) {
+        // do something with the selected alert
+      }
+      break;
+  }
+});
+
+// add event listener for arrow key navigation inside the alert popup
+alerts.querySelectorAll('li').forEach((alert, index) => {
+  alert.addEventListener('keydown', event => {
+    // check if the key pressed is an arrow key
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(event.key) !== -1) {
+      event.preventDefault();
+
+
+      // get the index of the currently focused element
+      const currentIndex = selectedAlertIndex;
+
+      // calculate the index of the next element based on the arrow key pressed
+      let nextIndex;
+      switch (event.key) {
+        case 'ArrowUp':
+          nextIndex = currentIndex - 1;
+          break;
+        case 'ArrowDown':
+          nextIndex = currentIndex + 1;
+          console.log(event.key);
+          console.log(event.target);
+          break;
+        case 'ArrowLeft':
+          // Move focus to the previous alert item, wrapping around to the end if necessary
+          if (currentIndex === 0) {
+            nextIndex = alerts.children.length - 1;
+          } else {
+            nextIndex = currentIndex - 1;
+          }
+          break;
+        case 'ArrowRight':
+          // Move focus to the next alert item, wrapping around to the beginning if necessary
+          if (currentIndex === alerts.children.length - 1) {
+            nextIndex = 0;
+          } else {
+            nextIndex = currentIndex + 1;
+          }
+          break;
+      }
+      
+      // Select and focus the next alert item
+      selectAlert(nextIndex);
+    }})});
 
 
 // Notifications hover effects
-var announcement = document.querySelector(".announcement");
-var announcements = document.getElementsByClassName("announcements")[0];
-var onannouncement = false;
-function openAnnouncement(){
-    onannouncement = true;
-    announcements.classList.remove("hide");
-    document.querySelector(".announcement a img").style.filter = "brightness(0) invert(1)";
-    document.querySelector(".announcement a span").style.display = "none";
+const announcement = document.querySelector(".announcement");
+const announcements = document.querySelector(".announcements");
+let isAnnouncementOpen = false;
 
+function openAnnouncement() {
+  isAnnouncementOpen = true;
+  announcements.classList.remove("hide");
+  announcement.querySelector("a img").style.filter = "brightness(0) invert(1)";
+  announcement.querySelector("a span").style.display = "none";
+  announcements.setAttribute("aria-expanded", "true");
 }
-function closeAnnouncement(){
-    onannouncement = false;
-    announcements.classList.add("hide");
-    document.querySelector(".announcement a img").style.filter = "none";
-    document.querySelector(".announcement a span").style.display = "flex";
+
+function closeAnnouncement() {
+  isAnnouncementOpen = false;
+  announcements.classList.add("hide");
+  announcement.querySelector("a img").style.filter = "none";
+  announcement.querySelector("a span").style.display = "flex";
+  announcements.setAttribute("aria-expanded", "false");
 }
-announcement.addEventListener("mouseenter", function () {
-    openAnnouncement();
-    document.querySelector('.announcements').setAttribute('aria-expanded','true');
-});
-announcements.addEventListener("mouseenter", function () {
-    openAnnouncement();
-    document.querySelector('.announcements').setAttribute('aria-expanded','true');
-});
-announcements.addEventListener("mouseleave", function () {
+
+function toggleAnnouncement() {
+  if (isAnnouncementOpen) {
     closeAnnouncement();
-    document.querySelector('.announcements').setAttribute('aria-expanded','false');
+  } else {
+    openAnnouncement();
+  }
+}
+
+announcement.addEventListener("mouseenter", toggleAnnouncement);
+announcement.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    toggleAnnouncement();
+  }
 });
-announcement.addEventListener("mouseleave", function () {
-    console.log("card-title");
-    onannouncement = false;
-    setTimeout(function () {
-        if (!onannouncement) {
-            closeAnnouncement();
-            document.querySelector('.announcements').setAttribute('aria-expanded','false');
-        }
-    }, 100);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && isAnnouncementOpen) {
+    closeAnnouncement();
+  }
 });
-announcement.addEventListener("keydown",function(event){
-    if(event.key === "Enter"){
-        openAnnouncement();
-        document.querySelector('.announcements').setAttribute('aria-expanded','true');
-    }
-});
-announcements.addEventListener("keydown",function(event){
-    if(event.key === "Enter"){
-        openAnnouncement();
-        document.querySelector('.announcements').setAttribute('aria-expanded','true');
-    }
-});
-announcements.addEventListener("keydown",function(event){
-    if(event.key === "Escape"){
-        closeAnnouncement();
-        document.querySelector('.announcements').setAttribute('aria-expanded','false');
-    }
-})
-announcement.addEventListener("keydown",function(event){
-    if(event.key === "Escape"){
-        closeAnnouncement();
-        document.querySelector('.announcements').setAttribute('aria-expanded','false');
-    }
-})
+
+
 
 function togglemuted(event) {
     var isKeyboardEvent = event.type === "keydown";
