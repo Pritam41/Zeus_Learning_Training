@@ -62,7 +62,7 @@
 
         <div class="alerts hide" role="dialog" aria-label="alert popup"  >
 
-          <ul>
+          <ul role="menu">
             <!-- <li>
               <span class="checkmark"></span>
               <p class="alert-title">License for Introduction to Algebra has been assigned to your school</p>
@@ -71,34 +71,34 @@
             </li> -->
 
 
-            <li tabindex="0" >
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem" >
               <span class="checkmark abort"></span>
               <p class="alert-title">License for Introduction to Algebra has been assigned to your school</p>
               <p class="date">15-Sep-2018 at 07:21 pm</p>
             </li>
-            <li tabindex="0" >
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark"></span>
               <p class="alert-title">Lesson 3 Practice Worksheet overdue for Amy Santiago</p>
               <p>Course: <span>Advanced Mathematics</span></p>
               <p class="date">15-Sep-2018 at 07:21 pm</p>
             </li>
-            <li tabindex="0">
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark abort"></span>
               <p class="alert-title">23 new students created</p>
               <p class="date">15-Sep-2018 at 07:21 pm</p>
             </li>
-            <li tabindex="0">
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark abort"></span>
               <p class="alert-title">15 submissions ready for evaluation</p>
               <p>Course: <span>Basics of Algebra</span></p>
               <p class="date">15-Sep-2018 at 07:21 pm</p>
             </li>
-            <li tabindex="0" >
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark abort"></span>
               <p class="alert-title">License for Basic Concepts in Geometry has been assigned to your...</p>
               <p class="date">15-Sep-2018 at 07:21 pm</p>
             </li>
-            <li tabindex="0">
+            <li tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark"></span>
               <p class="alert-title">Lesson 3 Practice Worksheet overdue for Sam Diego</p>
               <p>Course: <span>Advanced Mathematics</span></p>
@@ -113,9 +113,9 @@
       <div class="announcement ">
         <a href="#"><img src="icons/announcements.svg" alt="" />
           <span class="badge" aria-live="polite" aria-atomic="true">2</span></a>
-        <div class="announcements hide" role="dialog" aria-label="announcement popup" aria-expanded="false">
+        <div class="announcements hide" role="dialog" aria-label="announcement popup" aria-expanded="false" >
 
-          <ul>
+          <ul role="menu" >
             <!-- <li>
               <span class="checkmark" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Wilson Kumar</span></p>
@@ -127,7 +127,7 @@
               </div>
             </li> -->
 
-            <li tabindex="0">
+            <li role="menuitem" tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Wilson Kumar</span></p>
               <p class="announcement-title">No classes will be held on 21st Nov</p>
@@ -137,7 +137,7 @@
 
               </div>
             </li>
-            <li tabindex="0">
+            <li role="menuitem" tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark abort" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Samson White</span></p>
               <p class="announcement-title">Guest lecture on Geometry on 20th September</p>
@@ -146,7 +146,7 @@
                 <p class="date">15-Sep-2018 at 07:21 pm</p>
               </div>
             </li>
-            <li tabindex="0">
+            <li role="menuitem" tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Wilson Kumar</span></p>
               <p class="announcement-title">Additional course materials available on request</p>
@@ -156,7 +156,7 @@
 
               </div>
             </li>
-            <li tabindex="0">
+            <li role="menuitem" tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem">
               <span class="checkmark" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Wilson Kumar</span></p>
               <p class="announcement-title">No classes will be held on 25th Dec</p>
@@ -165,7 +165,7 @@
 
               </div>
             </li>
-            <li tabindex="0">
+            <li role="menuitem" tabindex="-1" onkeydown="handleKeyDown(event)" class="menuitem" >
               <span class="checkmark abort" onclick="tooglecheckmark(this)"></span>
               <p class="user">PA: <span>Wilson Kumar</span></p>
               <p class="announcement-title">Additional course materials available on request</p>

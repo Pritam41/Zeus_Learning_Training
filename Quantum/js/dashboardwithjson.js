@@ -156,24 +156,11 @@ function closeAlertPopup() {
   alertIcon.setAttribute('aria-expanded', 'false');
   onAlertPopup = false;
   selectedAlertIndex = -1;
-  alerts.querySelectorAll('.selected').forEach(alert => {
-    alert.classList.remove('selected');
-  });
+ 
 }
 
-// function to handle selecting an alert using the mouse
-function selectAlert(index) {
-  if (index < 0 || index >= alerts.children.length) {
-    return;
-  }
-  alerts.querySelectorAll('.selected').forEach(alert => {
-    alert.classList.remove('selected');
-  });
-  selectedAlertIndex = index;
-  const selectedAlert = alerts.children[selectedAlertIndex];
-  selectedAlert.classList.add('selected');
-  selectedAlert.focus();
-}
+
+
 
 // add event listeners for mouse interactions
 alertIcon.addEventListener('mouseenter', () => {
@@ -196,12 +183,7 @@ alertIcon.addEventListener('mouseleave', () => {
   }, 100);
 });
 
-alerts.addEventListener('click', event => {
-  const alert = event.target.closest('li');
-  if (alert && alerts.contains(alert)) {
-    alert.focus();
-  }
-});
+
 
 // add event listeners for keyboard interactions
 alertIcon.addEventListener('keydown', event => {
@@ -209,6 +191,9 @@ alertIcon.addEventListener('keydown', event => {
     openAlertPopup();
   }
 });
+alerts.addEventListener('keydown',event =>{
+  
+})
 
 alerts.addEventListener('keydown', event => {
   switch (event.key) {
@@ -224,55 +209,12 @@ alerts.addEventListener('keydown', event => {
     case 'Enter':
       const alert = alerts.children[selectedAlertIndex];
       if (alert) {
-        // do something with the selected alert
+        
       }
       break;
   }
 });
 
-// add event listener for arrow key navigation inside the alert popup
-alerts.querySelectorAll('li').forEach((alert, index) => {
-  alert.addEventListener('keydown', event => {
-    // check if the key pressed is an arrow key
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(event.key) !== -1) {
-      event.preventDefault();
-
-
-      // get the index of the currently focused element
-      const currentIndex = selectedAlertIndex;
-
-      // calculate the index of the next element based on the arrow key pressed
-      let nextIndex;
-      switch (event.key) {
-        case 'ArrowUp':
-          nextIndex = currentIndex - 1;
-          break;
-        case 'ArrowDown':
-          nextIndex = currentIndex + 1;
-          console.log(event.key);
-          console.log(event.target);
-          break;
-        case 'ArrowLeft':
-          // Move focus to the previous alert item, wrapping around to the end if necessary
-          if (currentIndex === 0) {
-            nextIndex = alerts.children.length - 1;
-          } else {
-            nextIndex = currentIndex - 1;
-          }
-          break;
-        case 'ArrowRight':
-          // Move focus to the next alert item, wrapping around to the beginning if necessary
-          if (currentIndex === alerts.children.length - 1) {
-            nextIndex = 0;
-          } else {
-            nextIndex = currentIndex + 1;
-          }
-          break;
-      }
-      
-      // Select and focus the next alert item
-      selectAlert(nextIndex);
-    }})});
 
 
 // Notifications hover effects
@@ -316,6 +258,33 @@ document.addEventListener("keydown", function (event) {
     closeAnnouncement();
   }
 });
+const menuitems = document.querySelectorAll('.menuitem');
+		let focusedItemIndex = -1;
+
+		menuitems.forEach((item, index) => {
+			item.addEventListener('focus', () => {
+				focusedItemIndex = index;
+			});
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowUp' || event.key === 'ArrowDown' ) {
+				event.preventDefault();
+
+				if (event.key === 'ArrowUp' && focusedItemIndex > 0) {
+					focusedItemIndex--;
+				}
+
+				if (event.key === 'ArrowDown' && focusedItemIndex < menuitems.length - 1) {
+					focusedItemIndex++;
+				}
+
+				menuitems[focusedItemIndex].focus();
+			}
+		});
+
+
+
 
 
 
