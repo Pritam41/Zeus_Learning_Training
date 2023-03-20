@@ -3,115 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
-    <!-- <link rel="stylesheet" href="footer.css" /> -->
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Login</title>
+    <title>Quantum - LogIn</title>
   </head>
-
   <body>
-    <div class="navbar">
-      <img src="header pattern image.png" class="navbg" />
-      <img
-        class="logo"
-        src="icons/logo used in header.svg"
-        alt="qunatum logo"
-      />
-    </div>
     <div class="container">
-      <div class="card">
-        <div class="heading">
-          <a href="#"><img src="icons/back.svg" alt="back image" /></a>
-          <h2>Log in with Quantum</h2>
-        </div>
-
-        <form class="card-form">
-          <div class="radio-input-set">
-            <div class="radio-input">
-              <span onclick="toggleradio(this)"></span>
-
-              <input
-                type="radio"
-                name="schoolType"
-                id="District"
-                value="District"
-                class="radio-button"
+      <header class="header">
+        <img
+          class="logo-img"
+          src="assets/icons/logo used in header.svg"
+          alt="Quantum"
+        />
+      </header>
+      <main class="main-content">
+        <form action="">
+          <div class="flex-container">
+            <button class="BTN back-button" aria-label="Back">
+              <img
+                src="assets/icons/back.svg"
+                alt="Back Button"
+                role="button"
               />
-              <label for="schoolType">District</label>
-            </div>
-
-            <div class="radio-input">
-              <span onclick="toggleradio(this)"></span>
-
-              <input
-                type="radio"
-                name="schoolType"
-                id="Independent School"
-                value="Independent School"
-                class="radio-button"
-              />
-              <label for="schoolType">Independent School</label>
-            </div>
+            </button>
+            <h2 class="form-title">Log in with Quantum</h2>
           </div>
-
-          <label for="state" class="label-dropdown">State</label>
-          <select value="state" name="state">
-            <option value="s1">s1</option>
-            <option value="s1">s1</option>
-            <option value="s1">s1</option>
-          </select>
-
-          <label for="District" class="label-dropdown">District</label>
-          <select value="District" name="District">
-            <option value="s1">s1</option>
-            <option value="s1">s1</option>
-            <option value="s1">s1</option>
-          </select>
-
-          <div class="input-box">
+          <div class="flex-container">
+            <input
+              type="radio"
+              id="District"
+              class="radio-icon"
+              name="school-type"
+              value="District"
+              checked
+            />
+            <label class="radio-label" for="District">District</label>
+            <input
+              type="radio"
+              id="Independent School"
+              class="radio-icon"
+              name="school-type"
+              value="Independent School"
+            />
+            <label class="radio-label" for="Independent School"
+              >Independent School</label
+            >
+          </div>
+          <div class="dropdown-state underline">
+            <label for="state-combobox" class="dropdown-label">State*</label>
+            <select id="state-combobox" class="dropdown-input" required>
+              <option value="Albama">Washington DC</option>
+              <option value="Albama">NewYork</option>
+              <option value="Albama">Manchester</option>
+            </select>
+          </div>
+          <div class="dropdown-district underline">
+            <label for="district-combobox" class="dropdown-label"
+              >District*</label
+            >
+            <select id="district-combobox" class="dropdown-input" required>
+              <option value="Albama School District">
+                Washington School District
+              </option>
+              <option value="Albama School District">
+                NewYork School District
+              </option>
+              <option value="Albama School District">
+                Manchester School District
+              </option>
+            </select>
+          </div>
+          <div class="inputContainer">
             <input
               type="text"
-              name="username"
-              id="username"
-              placeholder="Username/Email ID*"
+              class="input"
+              placeholder="Username/Email ID"
+              required
             />
-            <a href="#" class="forget-link">FORGOT USERNAME?</a>
+            <label for="" class="label">Username/Email ID*</label>
           </div>
-
-          <div class="input-box">
-            <div class="password-input">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password*"
-              />
-              <img src="icons/preview.svg" />
-            </div>
-            <a href="#" class="forget-link">FORGOT PASSWORD?</a>
+          <p class="margin-top-none">
+            <a href="" class="forget"> FORGOT USERNAME?</a>
+          </p>
+          <div class="inputContainer flex-container">
+            <input
+              type="password"
+              class="input"
+              placeholder="Password"
+              required
+            />
+            <label for="" class="label">Password*</label>
+            <img
+              class="float-right"
+              src="assets/icons/preview.svg"
+              alt="View Password Icon"
+            />
           </div>
-
-          <div class="rememberme-container">
-            <span onclick="togglecheckbox(this)"></span>
-            <input type="checkbox" name="rememberme" id="rememberme" />
-            <label for="rememberme" class="rememberme">Remember me</label>
+          <p class="margin-top-none">
+            <a href="" class="forget">FORGOT PASSWORD?</a>
+          </p>
+          <div class="flex-container checkbox-div">
+            <input
+              type="checkbox"
+              class="checkbox-icon"
+              id="Remember Me"
+              name="Remember Me"
+              value="Remember Me"
+            />
+            <label class="checkbox-txt" for="Remember Me">Remember Me</label>
           </div>
-
-          <input type="submit" value="LOG IN" class="submit-button" />
+          <button id="submit-btn">Log In</button>
         </form>
-      </div>
-      <div class="tabs">
-        <a link="#">About</a>
-        <a link="#">Contact Us</a>
-      </div>
-    </div>
-    <div class="footer">
-      <img src="icons/logo used in footer.svg" />
-      <p class="copyright">Copyright &copy; 2020-2021</p>
-      <p class="company">Zeus Sustems Ltd</p>
-      <p>All rights reserved</p>
+      </main>
+      <footer class="footer">
+        <div class="footer-top">
+          <a href=""><span> About</span></a>
+          <span class="vertical-line">&#124;</span>
+          <a href=""><span> Contact Us</span></a>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-logo">
+            <img
+              src="assets/icons/logo used in footer.svg"
+              alt="Quantum Logo"
+            />
+          </div>
+          <p id="copyright">Copyright &copy; 2022-23</p>
+          <p id="org-name">Zeus System Pvt. Ltd.</p>
+          <p>All rights reserved</p>
+        </div>
+      </footer>
     </div>
   </body>
-
-  <script src="js/login.js"></script>
 </html>
